@@ -15,7 +15,8 @@ class BookController extends Controller
     public function index()
     {
         $books = Book::all();
-        return view('welcome', compact('books'));
+        $total = 0;
+        return view('welcome', compact('books', 'total'));
     }
 
     /**
@@ -39,7 +40,7 @@ class BookController extends Controller
         $validated = $request->validate([
             'name' => 'required|min:1|max:20',
             'text' => 'required|max:300',
-            'grade' => 'required|min:1|max:5'
+            'grade' => 'required|gt:0|lt:6'
         ]);
         
         $newEntry = new Book;
