@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [BookController::class,'index']);
 Route::post('/addBook', [BookController::class,'store']);
+Route::get('/showBook/{id}', [BookController::class,'show']);
+Route::get('/editBook/{id}', [BookController::class,'edit']);
+Route::get('/deleteBook/{id}', [BookController::class,'destroy']);
+Route::post('/updateBook/{id}', [BookController::class,'update']);

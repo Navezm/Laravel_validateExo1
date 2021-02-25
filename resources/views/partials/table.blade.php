@@ -4,8 +4,7 @@
           <tr>
             <th scope="col">#</th>
             <th scope="col">Name</th>
-            <th scope="col">Text</th>
-            <th scope="col">Grade</th>
+            <th scope="col"></th>
           </tr>
         </thead>
         <tbody>
@@ -13,8 +12,7 @@
             <tr>
                 <th scope="row">{{$item->id}}</th>
                 <td>{{$item->name}}</td>
-                <td>{{$item->text}}</td>
-                <td>{{$item->grade}}</td>
+                <td><a class="btn btn-info" href="/showBook/{{$item->id}}">Details</a></td>
             </tr>
           @endforeach
         </tbody>
